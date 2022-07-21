@@ -9,18 +9,15 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    super.initState();
-  }
+class _MyAppState extends State<MyApp>{
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Weather forecast',
-      initialRoute: Routes.dashboard,
+      initialRoute: Routes.splashScreen,
       onGenerateRoute: Router.generateRoute,
     );
   }
+
 }

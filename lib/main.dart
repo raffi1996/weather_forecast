@@ -1,13 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:weather_forecast/http/repositories/weather_repository.dart';
+import 'package:weather_forecast/providers/get_it.dart';
 
 import 'app.dart';
 
-Future<void> main () async {
- // final x = await WeatherRepository.getCurrentWeather();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  //log(x.toString());
+  registerGetIt();
   runApp(const MyApp());
 }
