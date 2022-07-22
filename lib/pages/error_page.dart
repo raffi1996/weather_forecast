@@ -56,16 +56,14 @@ class ErrorScreen extends StatelessWidget {
                           Routes.splashScreen,
                         );
                       },
-                      child: Text(
-                        UiText.retry,
-                        style: TextStyle(
-                          color: brightnessColor(
-                            context: context,
-                            darkColor: AppColors.charcoal,
-                            lightColor: AppColors.white,
-                          ),
-                        )
-                      ),
+                      child: Text(UiText.retry,
+                          style: TextStyle(
+                            color: brightnessColor(
+                              context: context,
+                              darkColor: AppColors.charcoal,
+                              lightColor: AppColors.white,
+                            ),
+                          )),
                     ),
                   ),
                 ),

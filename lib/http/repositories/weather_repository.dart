@@ -3,7 +3,6 @@ import '../../models/weather_model/weather_model.dart';
 import '../dio.dart';
 
 class WeatherRepository {
-
   static Future<WeatherModel> getCurrentWeather({
     required double lat,
     required double lon,
@@ -14,7 +13,7 @@ class WeatherRepository {
         'lat': '$lat',
         'lon': '$lon',
         'appid': weatherApiKey,
-        'units' : 'metric',
+        'units': 'metric',
       },
     );
 

@@ -12,8 +12,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp>{
-
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,5 +24,4 @@ class _MyAppState extends State<MyApp>{
       onGenerateRoute: Router.generateRoute,
     );
   }
-
 }

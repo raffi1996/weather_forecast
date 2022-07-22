@@ -12,6 +12,6 @@ extension GetDate on int {
     final dateTime = DateTime.fromMillisecondsSinceEpoch(
       this * 1000,
     );
-    return  DateFormat('MMM d').format(dateTime);
+    return DateFormat('MMM d').format(dateTime);
   }
 }

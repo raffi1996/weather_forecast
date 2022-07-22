@@ -8,5 +8,4 @@ class DashboardState = _DashboardState with _$DashboardState;
 abstract class _DashboardState with Store {
   @observable
   int currentPage = 0;
-
 }
