@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:weather_forecast/store/weather_state/weather_state.dart';
+
+import '../constants/ui_texts.dart';
+import '../providers/get_it.dart';
+import '../widgets/weather_item.dart';
 
 class FutureWeatherScreen extends StatefulWidget {
   const FutureWeatherScreen({Key? key}) : super(key: key);
@@ -8,10 +13,34 @@ class FutureWeatherScreen extends StatefulWidget {
 }
 
 class _FutureWeatherScreenState extends State<FutureWeatherScreen> {
+  final _weatherState = locator<WeatherState>();
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('haloo future'),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        const Text(
+          UiText.nextFiveDays,
+          style: TextStyle(
+            fontSize: 30,
+          ),
+        ),
+        SizedBox(
+          height: 300,
+          child: ListView.builder(
+            clipBehavior: Clip.none,
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: _weatherState.nextFiveDays.length,
+            itemBuilder: (_, index) {
+              return WeatherItem(
+                weather: _weatherState.nextFiveDays[index],
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

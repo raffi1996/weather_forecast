@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_forecast/store/weather_state/weather_state.dart';
-import '../constanats/routing_names.dart';
+import '../constants/routing_names.dart';
 import '../mixins/after_first_layout.dart';
 import '../providers/get_it.dart';
 import '../widgets/splash_widget.dart';

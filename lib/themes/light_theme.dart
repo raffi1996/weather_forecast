@@ -11,5 +11,7 @@ final lightTheme = base.copyWith(
   ),
   bottomNavigationBarTheme: base.bottomNavigationBarTheme.copyWith(
     backgroundColor: AppColors.white,
+    selectedItemColor: AppColors.charcoal,
+    unselectedItemColor: AppColors.grayRegular,
   ),
 );

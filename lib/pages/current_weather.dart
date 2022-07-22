@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_forecast/extensions/int_extensions.dart';
 
-import '../constanats/ui_texts.dart';
+import '../constants/ui_texts.dart';
 import '../providers/get_it.dart';
 import '../store/weather_state/weather_state.dart';
 import '../themes/app_colors.dart';
@@ -16,7 +16,7 @@ class CurrentWeather extends StatefulWidget {
 }
 
 class _CurrentWeatherState extends State<CurrentWeather> {
-  final weatherState = locator<WeatherState>();
+  final _weatherState = locator<WeatherState>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _CurrentWeatherState extends State<CurrentWeather> {
                     height: 40,
                   ),
                   Text(
-                    weatherState.currentWeather!.dt.getDate,
+                    _weatherState.currentWeather!.dt.getDate,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
@@ -46,7 +46,7 @@ class _CurrentWeatherState extends State<CurrentWeather> {
                     height: 20,
                   ),
                   Text(
-                    '${weatherState.currentWeather!.main.temp.toString()} °C',
+                    '${_weatherState.currentWeather!.main.temp.toString()} °C',
                     style: const TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w400,
@@ -57,16 +57,16 @@ class _CurrentWeatherState extends State<CurrentWeather> {
                   ),
                   MinMaxWeather(
                     minWeather:
-                        '${weatherState.currentWeather!.main.temp_min.toString()} °C',
+                        '${_weatherState.currentWeather!.main.temp_min.toString()} °C',
                     maxWeather:
-                        '${weatherState.currentWeather!.main.temp_max.toString()} °C',
+                        '${_weatherState.currentWeather!.main.temp_max.toString()} °C',
                   ),
                   const SizedBox(
                     height: 50,
                   ),
                   WeatherIconWidget(
                     weatherState:
-                        weatherState.currentWeather!.weather.first.main,
+                        _weatherState.currentWeather!.weather.first.main,
                     size: 128,
                   ),
                   const SizedBox(
@@ -88,7 +88,7 @@ class _CurrentWeatherState extends State<CurrentWeather> {
                     height: 8,
                   ),
                   Text(
-                    '${weatherState.currentWeather!.visibility ~/ 1000} km',
+                    '${_weatherState.currentWeather!.visibility ~/ 1000} km',
                     style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
@@ -99,7 +99,7 @@ class _CurrentWeatherState extends State<CurrentWeather> {
                     height: 20,
                   ),
                   Text(
-                    weatherState.currentWeather!.weather.first.description,
+                    _weatherState.currentWeather!.weather.first.description,
                     style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 18,

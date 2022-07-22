@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide Router;
 import 'package:weather_forecast/themes/light_theme.dart';
-import 'constanats/routing_names.dart';
+import 'constants/routing_names.dart';
+import 'providers/get_it.dart';
 import 'router.dart';
 
 class MyApp extends StatefulWidget {
@@ -18,6 +19,7 @@ class _MyAppState extends State<MyApp>{
       theme: lightTheme,
       title: 'Flutter Weather forecast',
       initialRoute: Routes.splashScreen,
+      navigatorKey: locator<NavigationService>().navigatorKey,
       onGenerateRoute: Router.generateRoute,
     );
   }

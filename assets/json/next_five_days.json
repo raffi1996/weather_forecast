@@ -6,27 +6,20 @@
       },
       "weather": [
         {
-          "id": 800,
           "main": "Clear",
-          "description": "clear sky",
-          "icon": "01d"
+          "description": "clear sky"
         }
       ],
-      "base": "stations",
       "main": {
         "temp" : 30,
-        "temp_min": 280.37,
-        "temp_max": 284.26
+        "temp_min": 25,
+        "temp_max": 33
       },
       "visibility": 10000,
-      "clouds": {
-        "all": 1
-      },
       "dt": 1658568967,
       "timezone": -25200,
       "id": 420006353,
-      "name": "Mountain View",
-      "cod": 200
+      "name": "Mountain View"
     },
     {
       "coord": {
@@ -35,27 +28,20 @@
       },
       "weather": [
         {
-          "id": 800,
           "main": "Rain",
-          "description": "clear sky",
-          "icon": "01d"
+          "description": "Clouds"
         }
       ],
-      "base": "stations",
       "main": {
-        "temp" : 30,
-        "temp_min": 280.37,
-        "temp_max": 284.26
+        "temp" : 25,
+        "temp_min":23,
+        "temp_max": 28
       },
       "visibility": 10000,
-      "clouds": {
-        "all": 1
-      },
       "dt": 1658655367,
       "timezone": -25200,
       "id": 420006353,
-      "name": "Mountain View",
-      "cod": 200
+      "name": "Mountain View"
     },
     {
       "coord": {
@@ -64,27 +50,20 @@
       },
       "weather": [
         {
-          "id": 800,
           "main": "Rain",
-          "description": "clear sky",
-          "icon": "01d"
+          "description": "Clouds"
         }
       ],
-      "base": "stations",
       "main": {
-        "temp" : 30,
-        "temp_min": 280.37,
-        "temp_max": 284.26
+        "temp" : 22,
+        "temp_min": 20,
+        "temp_max": 25
       },
       "visibility": 10000,
-      "clouds": {
-        "all": 1
-      },
       "dt": 1658741767,
       "timezone": -25200,
       "id": 420006353,
-      "name": "Mountain View",
-      "cod": 200
+      "name": "Mountain View"
     },
     {
       "coord": {
@@ -93,27 +72,20 @@
       },
       "weather": [
         {
-          "id": 800,
           "main": "Clear",
-          "description": "clear sky",
-          "icon": "01d"
+          "description": "clear sky"
         }
       ],
-      "base": "stations",
       "main": {
         "temp" : 30,
-        "temp_min": 280.37,
-        "temp_max": 284.26
+        "temp_min": 25,
+        "temp_max": 33
       },
       "visibility": 10000,
-      "clouds": {
-        "all": 1
-      },
-      "dt": 1658741767,
+      "dt": 1658825523,
       "timezone": -25200,
       "id": 420006353,
-      "name": "Mountain View",
-      "cod": 200
+      "name": "Mountain View"
     },
     {
       "coord": {
@@ -122,26 +94,19 @@
       },
       "weather": [
         {
-          "id": 800,
           "main": "Rain",
-          "description": "clear sky",
-          "icon": "01d"
+          "description": "clear sky"
         }
       ],
-      "base": "stations",
       "main": {
-        "temp" : 30,
-        "temp_min": 280.37,
-        "temp_max": 284.26
+        "temp" : 22,
+        "temp_min": 20,
+        "temp_max": 26
       },
       "visibility": 10000,
-      "clouds": {
-        "all": 1
-      },
       "dt": 1658914567,
       "timezone": -25200,
       "id": 420006353,
-      "name": "Mountain View",
-      "cod": 200
+      "name": "Mountain View"
     }
 ]

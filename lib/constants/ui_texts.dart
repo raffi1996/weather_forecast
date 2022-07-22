@@ -4,4 +4,7 @@ abstract class UiText{
   static const drizzle = 'Drizzle';
   static const sunny = 'Sunny';
   static const visibility = 'Visibility';
+  static const nextFiveDays = 'Next Five Days';
+  static const errorText = 'Server error';
+  static const retry = 'Retry';
 }

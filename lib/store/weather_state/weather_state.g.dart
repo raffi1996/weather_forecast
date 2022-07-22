@@ -90,6 +90,15 @@ mixin _$WeatherState on _WeatherState, Store {
     return _$getNextFiveDaysAsyncAction.run(() => super.getNextFiveDays());
   }
 
+  late final _$getAddressFromLatLongAsyncAction =
+      AsyncAction('_WeatherState.getAddressFromLatLong', context: context);
+
+  @override
+  Future<void> getAddressFromLatLong(Position position) {
+    return _$getAddressFromLatLongAsyncAction
+        .run(() => super.getAddressFromLatLong(position));
+  }
+
   @override
   String toString() {
     return '''

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_forecast/utils/assets.dart';
 
-import '../constanats/ui_texts.dart';
+import '../constants/ui_texts.dart';
 import '../themes/app_colors.dart';
 
 class WeatherIconWidget extends StatelessWidget {
@@ -24,7 +24,9 @@ class WeatherIconWidget extends StatelessWidget {
             height: size,
             color: AppColors.charcoal,
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           const Text(
             UiText.drizzle,
             style: TextStyle(
@@ -43,7 +45,9 @@ class WeatherIconWidget extends StatelessWidget {
             width: size,
             height: size,
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           const Text(
             UiText.sunny,
             style: TextStyle(

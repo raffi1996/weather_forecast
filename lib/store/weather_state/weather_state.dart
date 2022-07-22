@@ -33,6 +33,7 @@ abstract class _WeatherState with Store {
       lat: currentPosition.latitude,
       lon: currentPosition.longitude,
     );
+    await getNextFiveDays();
     await getAddressFromLatLong(currentPosition);
     currentWeather = result;
     this.currentPosition = currentPosition;
@@ -44,11 +45,11 @@ abstract class _WeatherState with Store {
     nextFiveDays.addAll(weatherList);
   }
 
+  @action
   Future<void> getAddressFromLatLong(Position position) async {
     List<Placemark> placeMarks =
         await placemarkFromCoordinates(position.latitude, position.longitude);
     Placemark place = placeMarks[0];
-    locationName =
-        '${place.locality}, ${place.country}';
+    locationName = '${place.locality}, ${place.country}';
   }
 }

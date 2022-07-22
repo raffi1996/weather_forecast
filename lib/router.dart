@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weather_forecast/pages/error_page.dart';
 import 'package:weather_forecast/pages/splash_screen.dart';
-import 'constanats/routing_names.dart';
+import 'constants/routing_names.dart';
 import 'pages/dashboard_screen.dart';
-import 'pages/future_weather.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -13,8 +13,8 @@ class Router {
       case Routes.dashboard:
         return MaterialPageRoute(builder: (_) => const DashboardScreen());
 
-      case Routes.futureWeather:
-        return MaterialPageRoute(builder: (_) => const FutureWeatherScreen());
+      case Routes.errorPage:
+        return MaterialPageRoute(builder: (_) => const ErrorScreen());
 
       default:
         return MaterialPageRoute(
@@ -25,5 +25,17 @@ class Router {
           ),
         );
     }
+  }
+}
+
+class NavigationService {
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+  Future<dynamic> push(String routeName) {
+    return navigatorKey.currentState!.pushNamed(routeName);
+  }
+
+  Future<dynamic> pushAndPop(String routeName) {
+    return navigatorKey.currentState!.popAndPushNamed(routeName);
   }
 }

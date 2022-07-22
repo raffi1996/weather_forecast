@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constanats/ui_texts.dart';
+import '../constants/ui_texts.dart';
 
 class SplashWidget extends StatelessWidget {
   const SplashWidget({Key? key}) : super(key: key);
