@@ -10,8 +10,8 @@ class FutureWeatherScreen extends StatefulWidget {
 class _FutureWeatherScreenState extends State<FutureWeatherScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
+    return Container(
+      child: Text('haloo future'),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:mobx/mobx.dart';
 import 'package:weather_forecast/http/repositories/weather_repository.dart';
 
 import '../../models/weather_model/weather_model.dart';
+import '../../utils/create_weather_objects.dart';
 
 part 'weather_state.g.dart';
 
@@ -16,6 +17,9 @@ abstract class _WeatherState with Store {
   @observable
   Position? currentPosition;
 
+  @observable
+  ObservableList<WeatherModel> nextFiveDays = ObservableList<WeatherModel>.of([]).asObservable();
+
   @action
   Future<void> getCurrentWeather({required Position currentPosition,}) async {
 
@@ -25,5 +29,11 @@ abstract class _WeatherState with Store {
       );
       currentWeather = result;
       this.currentPosition = currentPosition;
+  }
+
+  @action
+  Future<void> getNextFiveDays() async {
+    final weatherList = await getWeather();
+    nextFiveDays.addAll(weatherList);
   }
 }

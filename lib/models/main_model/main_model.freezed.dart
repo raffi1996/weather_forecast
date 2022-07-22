@@ -20,7 +20,8 @@ MainModel _$MainModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MainModel {
-  double get temp => throw _privateConstructorUsedError;
+  double get temp_min => throw _privateConstructorUsedError;
+  double get temp_max => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -32,7 +33,7 @@ mixin _$MainModel {
 abstract class $MainModelCopyWith<$Res> {
   factory $MainModelCopyWith(MainModel value, $Res Function(MainModel) then) =
       _$MainModelCopyWithImpl<$Res>;
-  $Res call({double temp});
+  $Res call({double temp_min, double temp_max});
 }
 
 /// @nodoc
@@ -45,12 +46,17 @@ class _$MainModelCopyWithImpl<$Res> implements $MainModelCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? temp = freezed,
+    Object? temp_min = freezed,
+    Object? temp_max = freezed,
   }) {
     return _then(_value.copyWith(
-      temp: temp == freezed
-          ? _value.temp
-          : temp // ignore: cast_nullable_to_non_nullable
+      temp_min: temp_min == freezed
+          ? _value.temp_min
+          : temp_min // ignore: cast_nullable_to_non_nullable
+              as double,
+      temp_max: temp_max == freezed
+          ? _value.temp_max
+          : temp_max // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -62,7 +68,7 @@ abstract class _$$_MainModelCopyWith<$Res> implements $MainModelCopyWith<$Res> {
           _$_MainModel value, $Res Function(_$_MainModel) then) =
       __$$_MainModelCopyWithImpl<$Res>;
   @override
-  $Res call({double temp});
+  $Res call({double temp_min, double temp_max});
 }
 
 /// @nodoc
@@ -77,12 +83,17 @@ class __$$_MainModelCopyWithImpl<$Res> extends _$MainModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? temp = freezed,
+    Object? temp_min = freezed,
+    Object? temp_max = freezed,
   }) {
     return _then(_$_MainModel(
-      temp: temp == freezed
-          ? _value.temp
-          : temp // ignore: cast_nullable_to_non_nullable
+      temp_min: temp_min == freezed
+          ? _value.temp_min
+          : temp_min // ignore: cast_nullable_to_non_nullable
+              as double,
+      temp_max: temp_max == freezed
+          ? _value.temp_max
+          : temp_max // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -91,17 +102,19 @@ class __$$_MainModelCopyWithImpl<$Res> extends _$MainModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MainModel implements _MainModel {
-  _$_MainModel({required this.temp});
+  _$_MainModel({required this.temp_min, required this.temp_max});
 
   factory _$_MainModel.fromJson(Map<String, dynamic> json) =>
       _$$_MainModelFromJson(json);
 
   @override
-  final double temp;
+  final double temp_min;
+  @override
+  final double temp_max;
 
   @override
   String toString() {
-    return 'MainModel(temp: $temp)';
+    return 'MainModel(temp_min: $temp_min, temp_max: $temp_max)';
   }
 
   @override
@@ -109,13 +122,16 @@ class _$_MainModel implements _MainModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MainModel &&
-            const DeepCollectionEquality().equals(other.temp, temp));
+            const DeepCollectionEquality().equals(other.temp_min, temp_min) &&
+            const DeepCollectionEquality().equals(other.temp_max, temp_max));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(temp));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(temp_min),
+      const DeepCollectionEquality().hash(temp_max));
 
   @JsonKey(ignore: true)
   @override
@@ -131,13 +147,17 @@ class _$_MainModel implements _MainModel {
 }
 
 abstract class _MainModel implements MainModel {
-  factory _MainModel({required final double temp}) = _$_MainModel;
+  factory _MainModel(
+      {required final double temp_min,
+      required final double temp_max}) = _$_MainModel;
 
   factory _MainModel.fromJson(Map<String, dynamic> json) =
       _$_MainModel.fromJson;
 
   @override
-  double get temp;
+  double get temp_min;
+  @override
+  double get temp_max;
   @override
   @JsonKey(ignore: true)
   _$$_MainModelCopyWith<_$_MainModel> get copyWith =>

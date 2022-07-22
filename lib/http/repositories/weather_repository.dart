@@ -14,6 +14,7 @@ class WeatherRepository {
         'lat': '$lat',
         'lon': '$lon',
         'appid': weatherApiKey,
+        'units' : 'metric',
       },
     );
 

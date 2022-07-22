@@ -41,6 +41,22 @@ mixin _$WeatherState on _WeatherState, Store {
     });
   }
 
+  late final _$nextFiveDaysAtom =
+      Atom(name: '_WeatherState.nextFiveDays', context: context);
+
+  @override
+  ObservableList<WeatherModel> get nextFiveDays {
+    _$nextFiveDaysAtom.reportRead();
+    return super.nextFiveDays;
+  }
+
+  @override
+  set nextFiveDays(ObservableList<WeatherModel> value) {
+    _$nextFiveDaysAtom.reportWrite(value, super.nextFiveDays, () {
+      super.nextFiveDays = value;
+    });
+  }
+
   late final _$getCurrentWeatherAsyncAction =
       AsyncAction('_WeatherState.getCurrentWeather', context: context);
 
@@ -50,11 +66,20 @@ mixin _$WeatherState on _WeatherState, Store {
         .run(() => super.getCurrentWeather(currentPosition: currentPosition));
   }
 
+  late final _$getNextFiveDaysAsyncAction =
+      AsyncAction('_WeatherState.getNextFiveDays', context: context);
+
+  @override
+  Future<void> getNextFiveDays() {
+    return _$getNextFiveDaysAsyncAction.run(() => super.getNextFiveDays());
+  }
+
   @override
   String toString() {
     return '''
 currentWeather: ${currentWeather},
-currentPosition: ${currentPosition}
+currentPosition: ${currentPosition},
+nextFiveDays: ${nextFiveDays}
     ''';
   }
 }
