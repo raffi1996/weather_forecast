@@ -5,6 +5,7 @@ import '../constants/ui_texts.dart';
 import '../providers/get_it.dart';
 import '../router.dart';
 import '../themes/app_colors.dart';
+import '../utils/app_utils.dart';
 
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({Key? key}) : super(key: key);
@@ -14,10 +15,19 @@ class ErrorScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const Align(
+          Align(
             alignment: Alignment.center,
             child: Text(
               UiText.errorText,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: brightnessColor(
+                  context: context,
+                  darkColor: AppColors.white,
+                  lightColor: AppColors.charcoal,
+                ),
+              ),
             ),
           ),
           Align(
@@ -34,7 +44,11 @@ class ErrorScreen extends StatelessWidget {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                          AppColors.yellow,
+                          brightnessColor(
+                            context: context,
+                            darkColor: AppColors.white,
+                            lightColor: AppColors.charcoal,
+                          ),
                         ),
                       ),
                       onPressed: () async {
@@ -42,8 +56,15 @@ class ErrorScreen extends StatelessWidget {
                           Routes.splashScreen,
                         );
                       },
-                      child: const Text(
+                      child: Text(
                         UiText.retry,
+                        style: TextStyle(
+                          color: brightnessColor(
+                            context: context,
+                            darkColor: AppColors.charcoal,
+                            lightColor: AppColors.white,
+                          ),
+                        )
                       ),
                     ),
                   ),

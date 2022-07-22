@@ -4,6 +4,7 @@ import 'package:weather_forecast/store/weather_state/weather_state.dart';
 import '../providers/get_it.dart';
 import '../store/dashboard_state/dashboard_state.dart';
 import '../themes/app_colors.dart';
+import '../utils/app_utils.dart';
 import 'current_weather.dart';
 import 'future_weather.dart';
 
@@ -31,8 +32,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: AppBar(
         title: Text(
           weatherState.locationName!,
-          style: const TextStyle(
-            color: AppColors.charcoal,
+          style: TextStyle(
+            color: brightnessColor(
+              context: context,
+              darkColor: AppColors.white,
+              lightColor: AppColors.charcoal,
+            ),
           ),
         ),
       ),

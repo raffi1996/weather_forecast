@@ -3,6 +3,7 @@ import 'package:weather_forecast/utils/assets.dart';
 
 import '../constants/ui_texts.dart';
 import '../themes/app_colors.dart';
+import '../utils/app_utils.dart';
 
 class WeatherIconWidget extends StatelessWidget {
   final String weatherState;
@@ -22,7 +23,11 @@ class WeatherIconWidget extends StatelessWidget {
           Assets.drizzle.svg(
             width: size,
             height: size,
-            color: AppColors.charcoal,
+            color: brightnessColor(
+              context: context,
+              darkColor: AppColors.white,
+              lightColor: AppColors.charcoal,
+            ),
           ),
           const SizedBox(
             height: 20,
@@ -41,9 +46,13 @@ class WeatherIconWidget extends StatelessWidget {
       return Column(
         children: [
           Assets.sunny.svg(
-            color: AppColors.charcoal,
             width: size,
             height: size,
+            color: brightnessColor(
+              context: context,
+              darkColor: AppColors.white,
+              lightColor: AppColors.charcoal,
+            ),
           ),
           const SizedBox(
             height: 20,

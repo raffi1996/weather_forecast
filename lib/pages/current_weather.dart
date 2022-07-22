@@ -5,6 +5,7 @@ import '../constants/ui_texts.dart';
 import '../providers/get_it.dart';
 import '../store/weather_state/weather_state.dart';
 import '../themes/app_colors.dart';
+import '../utils/app_utils.dart';
 import '../widgets/min_max_weather.dart';
 import '../widgets/weather_icon_widget.dart';
 
@@ -37,9 +38,14 @@ class _CurrentWeatherState extends State<CurrentWeather> {
                   ),
                   Text(
                     _weatherState.currentWeather!.dt.getDate,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
+                      color: brightnessColor(
+                        context: context,
+                        darkColor: AppColors.white,
+                        lightColor: AppColors.charcoal,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -47,9 +53,14 @@ class _CurrentWeatherState extends State<CurrentWeather> {
                   ),
                   Text(
                     '${_weatherState.currentWeather!.main.temp.toString()} °C',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w400,
+                      color: brightnessColor(
+                        context: context,
+                        darkColor: AppColors.white,
+                        lightColor: AppColors.charcoal,
+                      ),
                     ),
                   ),
                   const SizedBox(

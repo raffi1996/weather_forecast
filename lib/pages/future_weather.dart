@@ -3,6 +3,8 @@ import 'package:weather_forecast/store/weather_state/weather_state.dart';
 
 import '../constants/ui_texts.dart';
 import '../providers/get_it.dart';
+import '../themes/app_colors.dart';
+import '../utils/app_utils.dart';
 import '../widgets/weather_item.dart';
 
 class FutureWeatherScreen extends StatefulWidget {
@@ -20,10 +22,15 @@ class _FutureWeatherScreenState extends State<FutureWeatherScreen> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        const Text(
+        Text(
           UiText.nextFiveDays,
           style: TextStyle(
             fontSize: 30,
+            color: brightnessColor(
+              context: context,
+              darkColor: AppColors.white,
+              lightColor: AppColors.charcoal,
+            ),
           ),
         ),
         SizedBox(

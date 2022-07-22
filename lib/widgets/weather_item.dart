@@ -4,6 +4,7 @@ import 'package:weather_forecast/models/weather_model/weather_model.dart';
 import 'package:weather_forecast/widgets/weather_icon_widget.dart';
 
 import '../themes/app_colors.dart';
+import '../utils/app_utils.dart';
 
 class WeatherItem extends StatelessWidget {
   final WeatherModel weather;
@@ -21,9 +22,14 @@ class WeatherItem extends StatelessWidget {
         children: [
           Text(
             weather.dt.getMonth,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 20,
+              color: brightnessColor(
+                context: context,
+                darkColor: AppColors.white,
+                lightColor: AppColors.charcoal,
+              ),
             ),
           ),
           const SizedBox(
