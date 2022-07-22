@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:weather_forecast/store/weather_state/weather_state.dart';
 import '../constanats/ui_texts.dart';
+import '../providers/get_it.dart';
 import '../store/dashboard_state/dashboard_state.dart';
+import '../themes/app_colors.dart';
 import 'current_weather.dart';
 import 'future_weather.dart';
 
@@ -15,7 +19,7 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   final DashboardState _dashboardState = DashboardState();
   final _controller = PageController();
-
+  final weatherState = locator<WeatherState>();
   @override
   void dispose() {
     _controller.dispose();
@@ -26,8 +30,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          UiText.weatherApp,
+        title: Text(
+          weatherState.locationName!,
+          style: const TextStyle(
+            color: AppColors.charcoal,
+          ),
         ),
       ),
       body: PageView(

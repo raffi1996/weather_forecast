@@ -1,6 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../claud_model/claud_model.dart';
 import '../lat_long_model/lat_long_model.dart';
 import '../main_model/main_model.dart';
 import '../weather_details_model/weather_details_model.dart';
@@ -15,13 +13,10 @@ class WeatherModel with _$WeatherModel {
     required double id,
     required String name,
     required MainModel main,
-    required double cod,
     @JsonKey(name: 'coord') required LatLongModel coordinates,
     required List<WeatherDetailsModel> weather,
-    required String base,
     required double visibility,
-    required ClaudModel clouds,
-    required double dt,
+    required int dt,
     required double timezone,
   }) = _WeatherModel;
 

@@ -1,3 +1,4 @@
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:mobx/mobx.dart';
 import 'package:weather_forecast/http/repositories/weather_repository.dart';
@@ -18,22 +19,36 @@ abstract class _WeatherState with Store {
   Position? currentPosition;
 
   @observable
-  ObservableList<WeatherModel> nextFiveDays = ObservableList<WeatherModel>.of([]).asObservable();
+  String? locationName;
+
+  @observable
+  ObservableList<WeatherModel> nextFiveDays =
+      ObservableList<WeatherModel>.of([]).asObservable();
 
   @action
-  Future<void> getCurrentWeather({required Position currentPosition,}) async {
-
-      final result = await WeatherRepository.getCurrentWeather(
-        lat: currentPosition.latitude,
-        lon: currentPosition.longitude,
-      );
-      currentWeather = result;
-      this.currentPosition = currentPosition;
+  Future<void> getCurrentWeather({
+    required Position currentPosition,
+  }) async {
+    final result = await WeatherRepository.getCurrentWeather(
+      lat: currentPosition.latitude,
+      lon: currentPosition.longitude,
+    );
+    await getAddressFromLatLong(currentPosition);
+    currentWeather = result;
+    this.currentPosition = currentPosition;
   }
 
   @action
   Future<void> getNextFiveDays() async {
     final weatherList = await getWeather();
     nextFiveDays.addAll(weatherList);
+  }
+
+  Future<void> getAddressFromLatLong(Position position) async {
+    List<Placemark> placeMarks =
+        await placemarkFromCoordinates(position.latitude, position.longitude);
+    Placemark place = placeMarks[0];
+    locationName =
+        '${place.locality}, ${place.country}';
   }
 }

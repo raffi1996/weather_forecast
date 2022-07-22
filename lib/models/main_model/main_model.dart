@@ -7,6 +7,7 @@ part 'main_model.g.dart';
 @freezed
 class MainModel with _$MainModel {
   factory MainModel({
+    required double temp,
     required double temp_min,
     required double temp_max,
   }) = _MainModel;

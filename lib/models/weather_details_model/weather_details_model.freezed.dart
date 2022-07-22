@@ -20,10 +20,8 @@ WeatherDetailsModel _$WeatherDetailsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WeatherDetailsModel {
-  double get id => throw _privateConstructorUsedError;
   String get main => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  String get icon => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +34,7 @@ abstract class $WeatherDetailsModelCopyWith<$Res> {
   factory $WeatherDetailsModelCopyWith(
           WeatherDetailsModel value, $Res Function(WeatherDetailsModel) then) =
       _$WeatherDetailsModelCopyWithImpl<$Res>;
-  $Res call({double id, String main, String description, String icon});
+  $Res call({String main, String description});
 }
 
 /// @nodoc
@@ -50,16 +48,10 @@ class _$WeatherDetailsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? main = freezed,
     Object? description = freezed,
-    Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as double,
       main: main == freezed
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
@@ -67,10 +59,6 @@ class _$WeatherDetailsModelCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      icon: icon == freezed
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -83,7 +71,7 @@ abstract class _$$_WeatherDetailsModelCopyWith<$Res>
           $Res Function(_$_WeatherDetailsModel) then) =
       __$$_WeatherDetailsModelCopyWithImpl<$Res>;
   @override
-  $Res call({double id, String main, String description, String icon});
+  $Res call({String main, String description});
 }
 
 /// @nodoc
@@ -99,16 +87,10 @@ class __$$_WeatherDetailsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? main = freezed,
     Object? description = freezed,
-    Object? icon = freezed,
   }) {
     return _then(_$_WeatherDetailsModel(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as double,
       main: main == freezed
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
@@ -117,10 +99,6 @@ class __$$_WeatherDetailsModelCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -128,27 +106,19 @@ class __$$_WeatherDetailsModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_WeatherDetailsModel implements _WeatherDetailsModel {
-  _$_WeatherDetailsModel(
-      {required this.id,
-      required this.main,
-      required this.description,
-      required this.icon});
+  _$_WeatherDetailsModel({required this.main, required this.description});
 
   factory _$_WeatherDetailsModel.fromJson(Map<String, dynamic> json) =>
       _$$_WeatherDetailsModelFromJson(json);
 
   @override
-  final double id;
-  @override
   final String main;
   @override
   final String description;
-  @override
-  final String icon;
 
   @override
   String toString() {
-    return 'WeatherDetailsModel(id: $id, main: $main, description: $description, icon: $icon)';
+    return 'WeatherDetailsModel(main: $main, description: $description)';
   }
 
   @override
@@ -156,21 +126,17 @@ class _$_WeatherDetailsModel implements _WeatherDetailsModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WeatherDetailsModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.main, main) &&
             const DeepCollectionEquality()
-                .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.icon, icon));
+                .equals(other.description, description));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(main),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(icon));
+      const DeepCollectionEquality().hash(description));
 
   @JsonKey(ignore: true)
   @override
@@ -188,22 +154,16 @@ class _$_WeatherDetailsModel implements _WeatherDetailsModel {
 
 abstract class _WeatherDetailsModel implements WeatherDetailsModel {
   factory _WeatherDetailsModel(
-      {required final double id,
-      required final String main,
-      required final String description,
-      required final String icon}) = _$_WeatherDetailsModel;
+      {required final String main,
+      required final String description}) = _$_WeatherDetailsModel;
 
   factory _WeatherDetailsModel.fromJson(Map<String, dynamic> json) =
       _$_WeatherDetailsModel.fromJson;
 
   @override
-  double get id;
-  @override
   String get main;
   @override
   String get description;
-  @override
-  String get icon;
   @override
   @JsonKey(ignore: true)
   _$$_WeatherDetailsModelCopyWith<_$_WeatherDetailsModel> get copyWith =>

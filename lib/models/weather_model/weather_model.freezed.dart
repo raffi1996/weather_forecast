@@ -23,14 +23,11 @@ mixin _$WeatherModel {
   double get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   MainModel get main => throw _privateConstructorUsedError;
-  double get cod => throw _privateConstructorUsedError;
   @JsonKey(name: 'coord')
   LatLongModel get coordinates => throw _privateConstructorUsedError;
   List<WeatherDetailsModel> get weather => throw _privateConstructorUsedError;
-  String get base => throw _privateConstructorUsedError;
   double get visibility => throw _privateConstructorUsedError;
-  ClaudModel get clouds => throw _privateConstructorUsedError;
-  double get dt => throw _privateConstructorUsedError;
+  int get dt => throw _privateConstructorUsedError;
   double get timezone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,18 +45,14 @@ abstract class $WeatherModelCopyWith<$Res> {
       {double id,
       String name,
       MainModel main,
-      double cod,
       @JsonKey(name: 'coord') LatLongModel coordinates,
       List<WeatherDetailsModel> weather,
-      String base,
       double visibility,
-      ClaudModel clouds,
-      double dt,
+      int dt,
       double timezone});
 
   $MainModelCopyWith<$Res> get main;
   $LatLongModelCopyWith<$Res> get coordinates;
-  $ClaudModelCopyWith<$Res> get clouds;
 }
 
 /// @nodoc
@@ -75,12 +68,9 @@ class _$WeatherModelCopyWithImpl<$Res> implements $WeatherModelCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? main = freezed,
-    Object? cod = freezed,
     Object? coordinates = freezed,
     Object? weather = freezed,
-    Object? base = freezed,
     Object? visibility = freezed,
-    Object? clouds = freezed,
     Object? dt = freezed,
     Object? timezone = freezed,
   }) {
@@ -97,10 +87,6 @@ class _$WeatherModelCopyWithImpl<$Res> implements $WeatherModelCopyWith<$Res> {
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
               as MainModel,
-      cod: cod == freezed
-          ? _value.cod
-          : cod // ignore: cast_nullable_to_non_nullable
-              as double,
       coordinates: coordinates == freezed
           ? _value.coordinates
           : coordinates // ignore: cast_nullable_to_non_nullable
@@ -109,22 +95,14 @@ class _$WeatherModelCopyWithImpl<$Res> implements $WeatherModelCopyWith<$Res> {
           ? _value.weather
           : weather // ignore: cast_nullable_to_non_nullable
               as List<WeatherDetailsModel>,
-      base: base == freezed
-          ? _value.base
-          : base // ignore: cast_nullable_to_non_nullable
-              as String,
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as double,
-      clouds: clouds == freezed
-          ? _value.clouds
-          : clouds // ignore: cast_nullable_to_non_nullable
-              as ClaudModel,
       dt: dt == freezed
           ? _value.dt
           : dt // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       timezone: timezone == freezed
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
@@ -145,13 +123,6 @@ class _$WeatherModelCopyWithImpl<$Res> implements $WeatherModelCopyWith<$Res> {
       return _then(_value.copyWith(coordinates: value));
     });
   }
-
-  @override
-  $ClaudModelCopyWith<$Res> get clouds {
-    return $ClaudModelCopyWith<$Res>(_value.clouds, (value) {
-      return _then(_value.copyWith(clouds: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -165,21 +136,16 @@ abstract class _$$_WeatherModelCopyWith<$Res>
       {double id,
       String name,
       MainModel main,
-      double cod,
       @JsonKey(name: 'coord') LatLongModel coordinates,
       List<WeatherDetailsModel> weather,
-      String base,
       double visibility,
-      ClaudModel clouds,
-      double dt,
+      int dt,
       double timezone});
 
   @override
   $MainModelCopyWith<$Res> get main;
   @override
   $LatLongModelCopyWith<$Res> get coordinates;
-  @override
-  $ClaudModelCopyWith<$Res> get clouds;
 }
 
 /// @nodoc
@@ -198,12 +164,9 @@ class __$$_WeatherModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? main = freezed,
-    Object? cod = freezed,
     Object? coordinates = freezed,
     Object? weather = freezed,
-    Object? base = freezed,
     Object? visibility = freezed,
-    Object? clouds = freezed,
     Object? dt = freezed,
     Object? timezone = freezed,
   }) {
@@ -220,10 +183,6 @@ class __$$_WeatherModelCopyWithImpl<$Res>
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
               as MainModel,
-      cod: cod == freezed
-          ? _value.cod
-          : cod // ignore: cast_nullable_to_non_nullable
-              as double,
       coordinates: coordinates == freezed
           ? _value.coordinates
           : coordinates // ignore: cast_nullable_to_non_nullable
@@ -232,22 +191,14 @@ class __$$_WeatherModelCopyWithImpl<$Res>
           ? _value._weather
           : weather // ignore: cast_nullable_to_non_nullable
               as List<WeatherDetailsModel>,
-      base: base == freezed
-          ? _value.base
-          : base // ignore: cast_nullable_to_non_nullable
-              as String,
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as double,
-      clouds: clouds == freezed
-          ? _value.clouds
-          : clouds // ignore: cast_nullable_to_non_nullable
-              as ClaudModel,
       dt: dt == freezed
           ? _value.dt
           : dt // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       timezone: timezone == freezed
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
@@ -263,12 +214,9 @@ class _$_WeatherModel implements _WeatherModel {
       {required this.id,
       required this.name,
       required this.main,
-      required this.cod,
       @JsonKey(name: 'coord') required this.coordinates,
       required final List<WeatherDetailsModel> weather,
-      required this.base,
       required this.visibility,
-      required this.clouds,
       required this.dt,
       required this.timezone})
       : _weather = weather;
@@ -283,8 +231,6 @@ class _$_WeatherModel implements _WeatherModel {
   @override
   final MainModel main;
   @override
-  final double cod;
-  @override
   @JsonKey(name: 'coord')
   final LatLongModel coordinates;
   final List<WeatherDetailsModel> _weather;
@@ -295,19 +241,15 @@ class _$_WeatherModel implements _WeatherModel {
   }
 
   @override
-  final String base;
-  @override
   final double visibility;
   @override
-  final ClaudModel clouds;
-  @override
-  final double dt;
+  final int dt;
   @override
   final double timezone;
 
   @override
   String toString() {
-    return 'WeatherModel(id: $id, name: $name, main: $main, cod: $cod, coordinates: $coordinates, weather: $weather, base: $base, visibility: $visibility, clouds: $clouds, dt: $dt, timezone: $timezone)';
+    return 'WeatherModel(id: $id, name: $name, main: $main, coordinates: $coordinates, weather: $weather, visibility: $visibility, dt: $dt, timezone: $timezone)';
   }
 
   @override
@@ -318,14 +260,11 @@ class _$_WeatherModel implements _WeatherModel {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.main, main) &&
-            const DeepCollectionEquality().equals(other.cod, cod) &&
             const DeepCollectionEquality()
                 .equals(other.coordinates, coordinates) &&
             const DeepCollectionEquality().equals(other._weather, _weather) &&
-            const DeepCollectionEquality().equals(other.base, base) &&
             const DeepCollectionEquality()
                 .equals(other.visibility, visibility) &&
-            const DeepCollectionEquality().equals(other.clouds, clouds) &&
             const DeepCollectionEquality().equals(other.dt, dt) &&
             const DeepCollectionEquality().equals(other.timezone, timezone));
   }
@@ -337,12 +276,9 @@ class _$_WeatherModel implements _WeatherModel {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(main),
-      const DeepCollectionEquality().hash(cod),
       const DeepCollectionEquality().hash(coordinates),
       const DeepCollectionEquality().hash(_weather),
-      const DeepCollectionEquality().hash(base),
       const DeepCollectionEquality().hash(visibility),
-      const DeepCollectionEquality().hash(clouds),
       const DeepCollectionEquality().hash(dt),
       const DeepCollectionEquality().hash(timezone));
 
@@ -364,13 +300,10 @@ abstract class _WeatherModel implements WeatherModel {
       {required final double id,
       required final String name,
       required final MainModel main,
-      required final double cod,
       @JsonKey(name: 'coord') required final LatLongModel coordinates,
       required final List<WeatherDetailsModel> weather,
-      required final String base,
       required final double visibility,
-      required final ClaudModel clouds,
-      required final double dt,
+      required final int dt,
       required final double timezone}) = _$_WeatherModel;
 
   factory _WeatherModel.fromJson(Map<String, dynamic> json) =
@@ -383,20 +316,14 @@ abstract class _WeatherModel implements WeatherModel {
   @override
   MainModel get main;
   @override
-  double get cod;
-  @override
   @JsonKey(name: 'coord')
   LatLongModel get coordinates;
   @override
   List<WeatherDetailsModel> get weather;
   @override
-  String get base;
-  @override
   double get visibility;
   @override
-  ClaudModel get clouds;
-  @override
-  double get dt;
+  int get dt;
   @override
   double get timezone;
   @override

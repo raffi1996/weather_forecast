@@ -7,12 +7,14 @@ part of 'main_model.dart';
 // **************************************************************************
 
 _$_MainModel _$$_MainModelFromJson(Map<String, dynamic> json) => _$_MainModel(
+      temp: (json['temp'] as num).toDouble(),
       temp_min: (json['temp_min'] as num).toDouble(),
       temp_max: (json['temp_max'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$_MainModelToJson(_$_MainModel instance) =>
     <String, dynamic>{
+      'temp': instance.temp,
       'temp_min': instance.temp_min,
       'temp_max': instance.temp_max,
     };

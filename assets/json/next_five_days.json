@@ -14,6 +14,7 @@
       ],
       "base": "stations",
       "main": {
+        "temp" : 30,
         "temp_min": 280.37,
         "temp_max": 284.26
       },
@@ -35,13 +36,14 @@
       "weather": [
         {
           "id": 800,
-          "main": "Clear",
+          "main": "Rain",
           "description": "clear sky",
           "icon": "01d"
         }
       ],
       "base": "stations",
       "main": {
+        "temp" : 30,
         "temp_min": 280.37,
         "temp_max": 284.26
       },
@@ -63,13 +65,14 @@
       "weather": [
         {
           "id": 800,
-          "main": "Clear",
+          "main": "Rain",
           "description": "clear sky",
           "icon": "01d"
         }
       ],
       "base": "stations",
       "main": {
+        "temp" : 30,
         "temp_min": 280.37,
         "temp_max": 284.26
       },
@@ -98,6 +101,7 @@
       ],
       "base": "stations",
       "main": {
+        "temp" : 30,
         "temp_min": 280.37,
         "temp_max": 284.26
       },
@@ -119,13 +123,14 @@
       "weather": [
         {
           "id": 800,
-          "main": "Clear",
+          "main": "Rain",
           "description": "clear sky",
           "icon": "01d"
         }
       ],
       "base": "stations",
       "main": {
+        "temp" : 30,
         "temp_min": 280.37,
         "temp_max": 284.26
       },

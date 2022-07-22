@@ -41,6 +41,22 @@ mixin _$WeatherState on _WeatherState, Store {
     });
   }
 
+  late final _$locationNameAtom =
+      Atom(name: '_WeatherState.locationName', context: context);
+
+  @override
+  String? get locationName {
+    _$locationNameAtom.reportRead();
+    return super.locationName;
+  }
+
+  @override
+  set locationName(String? value) {
+    _$locationNameAtom.reportWrite(value, super.locationName, () {
+      super.locationName = value;
+    });
+  }
+
   late final _$nextFiveDaysAtom =
       Atom(name: '_WeatherState.nextFiveDays', context: context);
 
@@ -79,6 +95,7 @@ mixin _$WeatherState on _WeatherState, Store {
     return '''
 currentWeather: ${currentWeather},
 currentPosition: ${currentPosition},
+locationName: ${locationName},
 nextFiveDays: ${nextFiveDays}
     ''';
   }
